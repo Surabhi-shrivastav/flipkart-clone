@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .navbar {
+      height: 64px;
+     /* position: fixed; */
+     width: 100%;
+     height: auto;
+     }
+
+    .navbar-brand small {
+      font-size: 16px;
+      margin-top: -4px;
+    }
+
+    .form-control::placeholder {
+      font-size: 18px;
+    }
+
+    .input-group-text {
+      padding-left: 14px;
+    
+    }
+
+    .nav-item {
+      font-size: 16px;
+    }
+
+    .nav-link {
+      color: #000;
+    }
+
+    .nav-link:hover {
+      color: #2874f0;
+    }
+
+    .category-item {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      margin-left: 20px;
+    }
+
+    .category-item img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 6px;
+    }
+   
+   
+
+  .card2 {
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .card2-img img {
+    height: 260px;
+    object-fit: contain;
+   }
+
+  .deal{
+    height: 700px;
+    /* border: 1px solid red; */
+     padding: 5%;
+     background-color: rgb(246, 240, 240);
+    object-fit: contain;
+  }
+  .card{
+    height: 300px;
+   /* border: 1px solid saddlebrown;   */
+    object-fit: cover;
+    padding: 5px;
+  }
+  .card img{
+   /* border: 1px solid green;  */ 
+    object-fit: contain;
+     position: relative;
+    top: 20px; 
+   width: 100%;
+    height: 160px;
+  }
+  .deal2{
+    height: 700px;
+    background-color: rgb(246, 240, 240);
+    object-fit: contain;
+    padding: 10px;
+  }
+  .deal2 img{
+    height: 100%;
+    width: 100%;
+  }
+ 
+  .footer-title{
+    font-weight:600;
+    font-size:16px;
+    margin-top:15px;
+    
+}
+.footer-links a{
+    text-decoration:none;
+     color: rgb(102, 101, 101);
+    font-size:16px;
+    margin-right:8px;
+    white-space:nowrap;
+}
+.footer-links a:hover{
+    text-decoration:underline;
+}
+.new{
+  display: flex;
+  height: 100px;
+  border: 1px solid red;
+}
+
+
+.product{
+  width:90%;
+  margin:auto;
+}
+
+.carousel-item{
+  padding:5px;
+}
+
+.card3{
+  height:200px;
+  border:none;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card3 img{
+  height:150px;
+  object-fit:contain;
+  padding:10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+  width:40px;
+  height:40px;
+  background:#ddd;
+  border-radius:50%;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.footer2{
+  color: rgb(102, 101, 101);
+  font-size: 14px;
+}
+.footer2 h6{
+  font-size: 14px;
+}
+.footer4 {
+  color: rgb(102, 101, 101); 
+  font-size: 14px;
+}
+
+
+
+
+
+.footer {
+    background-color: #272729;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    opacity: 0.8;
+}
+
+.footer a:hover {
+    opacity: 1;
+}
+
+.footer-heading {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #878787;
+    text-transform: uppercase;
+}
+
+.footer-bottom {
+    border-top: 1px solid #2c3e50;
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+.social-icons i {
+    font-size: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+    
+ 
+    <div class="container-fluid">
+    
+       <nav class="navbar navbar-expand-md bg-white shadow-sm px-3">
+   
+      <!-- Logo -->
+      <a class="navbar-brand d-flex flex-column lh-1" href="#">
+        <img src="image/fkheaderlogo_exploreplus-11f9e2.svg">
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Content -->
+      <div class="collapse navbar-collapse" id="fkNavbar">
+
+        <!-- Search -->
+        <form class="d-flex flex-grow-1 mx-lg-4 my-2 my-lg-0">
+          <div class="input-group">
+            <span class="input-group-text bg-light border-0">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="search" class="form-control border-0 bg-light"
+              placeholder="Search for Products, Brands and More">
+          </div>
+        </form>
+
+        <!-- Right Menu -->
+        <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle me-1"></i> Login
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">My Profile</a></li>
+              <li><a class="dropdown-item" href="#">Orders</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#">
+              <i class="bi bi-cart3 me-1"></i> Cart
+            </a>
+          </li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link fw-semibold" href="#">
+              <i class="bi bi-shop me-1"></i> Become a Seller
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-three-dots-vertical"></i>
+              
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      </nav>
+    </div>
+  
+  <!-- ============================= section-2=============================== -->
+
+  <div class="container-fluid bg-white shadow-sm py-3 ">
+    <div class="row justify-content-center text-center g-4">
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="image/item-1.webp" alt="Minutes">
+          <p>Minutes</p>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="image/item-2.webp" alt="Mobiles">
+              Mobiles & Tablets
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+            <img src="image/item-5.webp" alt="Fashion">
+          <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">
+          
+            Fashion
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Men's Top Wear</a></li>
+            <li><a class="dropdown-item" href="#">men's Bottom Wear</a></li>
+            <li><a class="dropdown-item" href="#">Women Ethinic</a></li>
+            <li><a class="dropdown-item" href="#">Men Footwear</a></li>
+            <li><a class="dropdown-item" href="#">Women footWear</a></li>
+            <li><a class="dropdown-item" href="#">Watch and Accessories</a></li>
+            <li><a class="dropdown-item" href="#"> women Western</a></li>
+            <li><a class="dropdown-item" href="#">Bags. Suitcse $ Luggage</a></li>
+            <li><a class="dropdown-item" href="#">Kids</a></li>
+            <li><a class="dropdown-item" href="#">Essentials</a></li>
+            <li><a class="dropdown-item" href="#"> Winter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+           <img src="image/item-4.webp" alt="Electronics">
+          <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">
+           Electronics
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Audio</a></li>
+            <li><a class="dropdown-item" href="#">Electronic GST Store</a></li>
+            <li><a class="dropdown-item" href="#">Cameras & Accessories</a></li>
+            <li><a class="dropdown-item" href="#">computer& Peripherals</a></li>
+            <li><a class="dropdown-item" href="#">Gaming</a></li>
+            <li><a class="dropdown-item" href="#">Health & Personal care</a></li>
+            <li><a class="dropdown-item" href="#"> Laptop Accessories</a></li>
+            <li><a class="dropdown-item" href="#">Laptop and Desktop</a></li>
+            <li><a class="dropdown-item" href="#">Mobile Accessory</a></li>
+            <li><a class="dropdown-item" href="#">Powerbank</a></li>
+            <li><a class="dropdown-item" href="#"> Smart home Automation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="image/item-3.webp" alt="TV">
+          <p>TVs & Appliances</p>
+        </div>
+      </div>
+
+
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="image/item-6.webp" alt="Home">
+  <a class="nav-link dropdown-toggle fw-semibold" href="" data-bs-toggle="dropdown">
+          Home & 
+          Kitchen  </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Decore</a></li>
+            <li><a class="dropdown-item" href="#">Furniture</a></li>
+            <li><a class="dropdown-item" href="#">sofas</a></li>
+            <li><a class="dropdown-item" href="#">Blanket</a></li>
+            <li><a class="dropdown-item" href="#">Gaming</a></li>
+            <li><a class="dropdown-item" href="#">Wallpaper</a></li>
+            <li><a class="dropdown-item" href="#"> Dining</a></li>
+            <li><a class="dropdown-item" href="#">Bath linen</a></li>
+            <li><a class="dropdown-item" href="#">Cleaning </a></li>
+            <li><a class="dropdown-item" href="#">Pooja</a></li>
+            <li><a class="dropdown-item" href="#"> Cookware</a></li>
+            <li><a class="dropdown-menu" href=""> Lighting</a></li>
+            <li><a class="dropdown-item" href="#">Containers</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="image/item-7.webp" alt="Beauty">
+          <a class="nav-link dropdown-toggle fw-semibold" href="#" data-bs-toggle="dropdown">
+          Beauty & Toys </a>
+          <ul  class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Skin care</a></li>
+            <li><a class="dropdown-item" href="#">Hair care</a></li>
+            <li><a class="dropdown-item" href="#">Baby bath </a></li>
+            <li><a class="dropdown-item" href="#">bath spa</a></li>
+            <li><a class="dropdown-item" href="#">Perfume</a></li>
+            <li><a class="dropdown-item" href="#">face</a></li>
+            <li><a class="dropdown-item" href="#"> oral care</a></li>
+            <li><a class="dropdown-item" href="#">lips</a></li>
+            <li><a class="dropdown-item" href="#">Gifting  </a></li>
+            <li><a class="dropdown-item" href="#">Derma</a></li>
+            <li><a class="dropdown-item" href="#"> Cookware</a></li>
+            <li><a class="dropdown-menu" href=""> Gaming</a></li>
+            <li><a class="dropdown-item" href="#">remod controls</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="">
+          <img src="image/item-8.webp" alt="Furniture">
+          <a class="nav-link dropdown-toggle fw-semibold" href="" data-bs-toggle="dropdown">
+          Furniture</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#"> Office chair</a></li>
+            <li><a class="dropdown-item" href="#">Bed</a></li>
+            <li><a class="dropdown-item" href="#">TV units</a></li>
+            <li><a class="dropdown-item" href="#"> Dining sets</a></li>
+            <li><a class="dropdown-item" href="#">lips</a></li>
+            <li><a class="dropdown-item" href="#">Outdoor </a></li>
+            <li><a class="dropdown-item" href="#">office table</a></li>
+            <li><a class="dropdown-item" href="#"> Dressing Table </a></li>
+            <li><a class="dropdown-menu" href=""> Sofs beds</a></li>
+            <li><a class="dropdown-item" href="#">side table </a></li>
+            <li><a class="dropdown-item" href="#">Matteresses</a></li>
+            <li><a class="dropdown-item" href="#">Recliners</a></li>
+            <li><a class="dropdown-item" href="#"> Kid seting</a></li>
+            <li><a class="dropdown-item" href="#">Coffe Table</a></li>
+            <li><a class="dropdown-item" href="#">Shoe racks </a></li>
+            <li><a class="dropdown-item" href="#">Laptop table</a></li>
+            <li><a class="dropdown-item" href="#"> wardrobes</a></li>
+            <li><a class="dropdown-menu" href=""> sofas</a></li>
+            <li><a class="dropdown-item" href="#">collapsible wardrobe</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="image/item-9.webp" alt="Flights">
+          <p>Flight Bookings</p>
+         
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="image/item-10.webp" alt="Grocery">
+          <a class="nav-link dropdown-toggle fw-semibold" href="" data-bs-toggle="dropdown">
+          Grocery </a>
+         <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#"> Oil</a></li>
+            <li><a class="dropdown-item" href="#">Rice</a></li>
+            <li><a class="dropdown-item" href="#">chocolate</a></li>
+            <li><a class="dropdown-item" href="#"> flour</a></li>
+            <li><a class="dropdown-item" href="#">spices</a></li>
+            <li><a class="dropdown-item" href="#">coffee pawder  </a></li>
+            <li><a class="dropdown-item" href="#">Tea powder</a></li>
+            <li><a class="dropdown-item" href="#"> sugar </a></li>
+            <li><a class="dropdown-menu" href=""> Ghee</a></li>
+            <li><a class="dropdown-item" href="#">Dry fruits </a></li>
+            <li><a class="dropdown-item" href="#">Butter</a></li>
+            <li><a class="dropdown-item" href="#">curd</a></li>
+            <li><a class="dropdown-item" href="#"> seeds</a></li>
+            <li><a class="dropdown-item" href="#">souces</a></li>
+            <li><a class="dropdown-item" href="#">peaniuts</a></li>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ------------------section-3 ------------------------------- -->
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="image/poster-2.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/poster-3.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/poster-1.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/poater-4.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="image/poster-6.webp" class="d-block w-100" alt="...">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- ---------------------------section-4-------------------------------------- -->
+   <!-- <div class="container-fluid mt-3">
+    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-inner2">
+
+       
+        <div class="carousel-item active">
+          <div class="row g-3">
+            <div class="col-3">
+              <div class="card" style="width: 200px; height: 280px; border:none">
+                <img src="image/deal-1.webp" class="card-img-top">
+                <div class="card-body text-center">
+                  Product 1
+                  <h5>₹999</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="image/deal-2.webp">
+                <div class="card-body text-center">
+                  <h6>Product 2</h6>
+                  <p>₹1299</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3 ">
+              <div class="card"  style="width: 200px;height: 280px; border: none;">
+                <img src="image/deal-3.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-3 ">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="image/deal-4.webp">
+                <div class="card-body text-center">
+                  <h6>Product 4</h6>
+                  <p>₹1499</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="carousel-item active ">
+          <div class="row g-3">
+            <div class="col-3 ">
+              <div class="card" style="width: 200px;height: 280px; border: none;">
+                <img src="image/deal-5.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+           <div class="col-3">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="image/deal-6.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card" style="width: 200px;height: 280px; border: none;">
+                <img src="image/deal-7.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-3 ">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="image/deal-8.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+   
+       <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+     </div>
+    </div>  -->
+
+
+    <div class="product mt-4">
+
+<div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+
+<div class="carousel-inner">
+
+<!-- SLIDE 1 -->
+<div class="carousel-item active">
+<div class="row g-2">
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-1.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 1</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-2.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 2</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-3.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 3</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-4.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 3</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-5.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 3</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-6.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 4</h6>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="carousel-item">
+<div class="row g-2">
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-7.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 5</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-8.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 6</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/deal-9.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 7</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/new1.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 3</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/nwe-2.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 3</h6>
+</div>
+</div>
+</div>
+
+<div class="col-12 col-sm-6 col-lg-2">
+<div class="card3">
+<img src="image/new3.webp" class="card-img-top">
+<div class="card-body">
+<h6>Card 8</h6>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+
+</div>
+</div>
+
+  <!-- ---------------------------section-5-------------------------------------- -->
+    <div class="container-fluid py-3">
+      <div class="row g-3">
+       
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-1.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-2.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-3.webp"></div>
+            </div>
+         </div>
+        </div>
+        <!-- -------------------------col-2------------------------------------- -->
+
+         <div class="row g-3 mt-1">
+       
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-4.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-5.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-6.webp"></div>
+            </div>
+         </div>
+        </div>
+       <!-- --------------------------------------col-3----------------------------------------   -->
+         <div class="row g-3 mt-1">
+       
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-7.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-8.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-9.webp"></div>
+            </div>
+         </div>
+        </div>
+    </div>
+
+    <!-- ----------------------------------section-6--------------------------------------- -->
+
+    <div class="container-fluid py-3">
+      <div class="row g-4" >
+    <!-- ----------------------------col-1 -------------------------- -->
+         <div class="col-lg-4 col-md-6 col-sm-12">
+         <div class="deal"> 
+          <div class="col-12 mb-3"> <h4>Laptop for you </h4></div>
+           <div class="row g-2">
+           
+           <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/laptop-1.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                <p class="card-title mt-3"> 0% interest </p>
+                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/laptop-7.webp" class="card-img-top">
+                <div class="card-body mt-3">
+                <p class="card-title"> 0% interest </p>
+                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
+                </div>
+                </div>
+              </div>
+              </div>
+          
+            <div class="row g-2 mt-2">
+
+              <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/laptop-3.webp" class="card-img-top">
+              <div class="card-body mt-3">
+                <p class="card-title"> Top Rated</p>
+                <h6 class="card-text" style="color: green;">4 Star and Above</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/laptop-4.webp">
+                <div class="card-body mt-3">
+                <p class="card-title"> Best Discount</p>
+                <h6 class="card-text" style="color: green;"> min 70% off</h6>
+                </div>
+                </div>
+              </div>
+             </div>
+             </div>
+             </div>
+          <!-- ----------------------col 2------------------------------- -->
+         
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="deal">
+              <div class="col-12"> <h4> Tops Picks for you </h4></div>
+           <div class="row g-2">
+           
+           <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/toy-1.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                <p class="card-title mt-3"> Remod control Toy</p>
+                <h6 class="card-text" style="color: green;"> Spacial Offer</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/toy-2.webp" class="card-img-top">
+                <div class="card-body mt-3">
+                <p class="card-title"> Electric cycle </p>
+                <h6 class="card-text" style="color: green;"> min 40% off</h6>
+                </div>
+                </div>
+              </div>
+              </div>
+          
+               <div class="row g-2 mt-2">
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/toy-3.webp" class="card-img-top">
+              <div class="card-body mt-3">
+                <p class="card-title"> Fitness kit</p>
+                <h6 class="card-text" style="color: green;"> special offer</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/toy-4.webp">
+                <div class="card-body mt-3">
+                <p class="card-title"> Outdoor Toys </p>
+                <h6 class="card-text" style="color: green;"> min 50% off</h6>
+                </div>
+                </div>
+              </div>
+             </div>
+            </div>
+          </div>
+
+<!-- ---------------------------------col-3---------------------------------------- -->
+ 
+<div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="deal2">
+              <img src="image/section3.webp"> 
+              
+            </div>
+           </div>
+          </div>
+        </div>
+  
+  <!-- ---------------------------------section7---------------------------------------       -->
+  <div class="container-fluid ">
+
+    <div class="row g-3">
+      <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
+        <img src="image/flipkart traval.webp" style="width: 100%; height: 300px;">
+      </div>
+    </div>
+      <div class="row g-3">
+       
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-10.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-11.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-12.webp"></div>
+            </div>
+         </div>
+        </div>
+        <!-- -------------------------col-2------------------------------------- -->
+
+         <div class="row g-3 mt-1">
+       
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-13.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-14.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-15.webp"></div>
+            </div>
+         </div>
+        </div>
+       </div>
+
+       <!-- ===================section8======================== -->
+
+        <div class="container-fluid py-3">
+      <div class="row g-4" >
+    <!-- ----------------------------col-1 -------------------------- -->
+         <div class="col-lg-4 col-md-6 col-sm-12">
+         <div class="deal"> 
+          <div class="col-lg-12 col-mb-12 col-sm-12 mb-3"> <h4>Top Furniture</h4></div>
+           <div class="row g-2">
+           
+           <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/furniture-1.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                <p class="card-title mt-3"> 0% interest </p>
+                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/furniture-2.webp" class="card-img-top">
+                <div class="card-body mt-3">
+                <p class="card-title"> 0% interest </p>
+                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
+                </div>
+                </div>
+              </div>
+              </div>
+          
+            <div class="row g-2 mt-2">
+
+              <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/furniture-3.webp" class="card-img-top">
+              <div class="card-body mt-3">
+                <p class="card-title"> Men's Casual Shoes</p>
+                <h6 class="card-text" style="color: green;"> min 70% off</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/furfurniture-4.webp">
+                <div class="card-body mt-3">
+                <p class="card-title"> Men's Casual Shoes</p>
+                <h6 class="card-text" style="color: green;"> min 70% off</h6>
+                </div>
+                </div>
+              </div>
+             </div>
+             </div>
+             </div>
+          <!-- ----------------------col 2------------------------------- -->
+         
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="deal">
+              <div class="col-lg-12 col-mb-12 col-sm-12 mb-3"> <h4> Tops Picks for you </h4></div>
+           <div class="row g-2">
+           
+           <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/fasion-1.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                <p class="card-title mt-3"> Remod control Toy</p>
+                <h6 class="card-text" style="color: green;"> Spacial Offer</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/fasion-2.webp" class="card-img-top">
+                <div class="card-body mt-3">
+                <p class="card-title"> Electric cycle </p>
+                <h6 class="card-text" style="color: green;"> min 40% off</h6>
+                </div>
+                </div>
+              </div>
+              </div>
+          
+               <div class="row g-2 mt-2">
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/fastion-3.webp" class="card-img-top">
+              <div class="card-body mt-3">
+                <p class="card-title"> Fitness kit</p>
+                <h6 class="card-text" style="color: green;"> special offer</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/fastion-4.webp">
+                <div class="card-body mt-3">
+                <p class="card-title"> Outdoor Toys </p>
+                <h6 class="card-text" style="color: green;"> min 50% off</h6>
+                </div>
+                </div>
+              </div>
+             </div>
+            </div>
+          </div>
+
+<!-- ---------------------------------col-3---------------------------------------- -->
+ 
+<div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="deal2">
+              <img src="image/1111111.webp"> 
+              
+            </div>
+           </div>
+          </div>
+        </div>
+     
+        <!-- ========================section-9====================== -->
+         <div class="container-fluid ">
+
+        <div class="row g-3">
+       
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-1.webp"></div>
+            </div>
+         </div> 
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-2.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-3.webp"></div>
+            </div>
+         </div>
+        </div>
+        <!-- -------------------------col-2------------------------------------- -->
+
+         <div class="row g-3 mt-1">
+       
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-7.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-8.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-9.webp"></div>
+            </div>
+         </div>
+        </div>
+
+        <div class="row g-3 mt-1">
+       
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-10.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-11.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-12.webp"></div>
+            </div>
+         </div>
+        </div>
+        <div class="row g-3 mt-1">
+       
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-13.webp"></div>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-14.webp"></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card2">
+              <div class="card2-img"> <img src="image/promo-15.webp"></div>
+            </div>
+         </div>
+        </div>
+       </div>
+       </div>
+
+
+ <!-- =============================section10============================       -->
+
+ <div class="container-fluid py-3">
+      <div class="row g-4" >
+    <!-- ----------------------------col-1 -------------------------- -->
+         <div class="col-lg-4 col-md-6 col-sm-12">
+         <div class="deal"> 
+          <div class="col-lg-12 col-mb-12 col-sm-12 mb-3"> <h4>Best Value Deals on You</h4></div>
+           <div class="row g-2">
+           
+           <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/earphone.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                <p class="card-title mt-3"> True Wireless</p>
+                <h6 class="card-text" style="color: green;">  min 50% off</h6>
+                </div>
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/soes.webp" class="card-img-top">
+                <div class="card-body mt-3">
+                <p class="card-title"> Men's Casual Shoes</p>
+                <h6 class="card-text" style="color: green;"> min 70% off</h6>
+                </div>
+                </div>
+              </div>
+              </div>
+          
+            <div class="row g-2 mt-2">
+
+              <div class="col-lg-6 col-mb-6 col-sm-6">
+              <div class="card"> <img src="image/watch.webp" class="card-img-top">
+              <div class="card-body mt-3">
+                <p class="card-title"> Wrist Watch</p>
+                <h6 class="card-text" style="color: green;"> min 90% off</h6>
+                </div>
+              
+              </div>
+              </div>
+
+               <div class="col-lg-6 col-mb-6 col-sm-6">
+                 <div class="card"> <img src="image/bag.webp">
+                <div class="card-body mt-3">
+                <p class="card-title">Laptop Bag</p>
+                <h6 class="card-text" style="color: green;"> min 70% off</h6>
+                </div>
+                </div>
+              </div>
+             </div>
+             </div>
+             </div>
+             
+             <div class="col-lg-8 col-md-12 col-sm-12">
+              <div class="deal2">
+                <img src="image/mob.webp"> 
+              </div>
+             </div>
+
+<!-- ======================section11======================================== -->
+ 
+<div class="container-fluid mt-3">
+  <div class="footer4">
+ <h5 class="fw-bold mb-3"> Top Stories : Brand Directory</h5>
+<div class="row">
+<div class="col-12">
+<div class="footer-title">MOST SEARCHED FOR ON FLIPKART:</div>
+<div class="footer-links">
+<a href="#">Valentine Day Sale</a> |
+ Motorola Signature | Bags for Men | Akaso Camera | Laptop Store | Mixer Juicer Grinder | Men's Shoes | Adidas Men's Shoes 
+| Boat Earbuds | Body Lotion | Campus Shoes | Earphones | Red Tape Shoes | Men's Slippers | Helmets | Nike Shoes | Puma Shoes | 
+Trimmers | Vivo Phones | Iqoo Phones | Smartwatches | Biscuits | Women's Footwear | Trolley Bags | Water Bottles | Men's Jackets 
+| Anarkali Suits | Hoodies for Men | Men's Watches | Men's Winter Jackets | Women's Watches | Teddy Bears | Premium Laptops | 
+Ray Ban Meta Smart Glasses | Rings | Earrings | Airpods | Urbn Power Banks | GoBoult Wireless Earphones | Bose Soundbars | Jewellery 
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">MOBILES </a> |
+ 4G Mobiles | Nokia Phones | Samsung Mobiles | Oppo Mobiles | Apple Phones | Realme Mobiles | Nothing Phones | OnePlus Mobiles | 
+Blackberry Phones | POCO Mobiles | Feature Mobile Phones | Redmi Phones | Motorola Mobiles | Mobile Phones Under 10000 | Mobile 
+Phones Under 15000 | Mobile Phones Under 20000 | Mobile Phones Under 25000 | 256 GB Mobiles | 512 GB Mobiles | 5.5 Inch Mobiles
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">CAMERA </a> |
+ Nikon Cameras | Canon Cameras | Sony Cameras | Instant Cameras | DSLR Mirrorless Cameras | GoPro Cameras | Insta360 Cameras 
+ | Drones | Sports Action Cameras
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">MOBILES </a> |
+ 4G Mobiles | Nokia Phones | Samsung Mobiles | Oppo Mobiles | Apple Phones | Realme Mobiles | Nothing Phones | OnePlus Mobiles | 
+Blackberry Phones | POCO Mobiles | Feature Mobile Phones | Redmi Phones | Motorola Mobiles | Mobile Phones Under 10000 | Mobile 
+Phones Under 15000 | Mobile Phones Under 20000 | Mobile Phones Under 25000 | 256 GB Mobiles | 512 GB Mobiles | 5.5 Inch Mobiles
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">LAPTOPS</a> |
+ Apple Laptops | Acer Laptops | Lenovo Laptops | Gaming Laptops | Dell Laptops | Asus Laptops | HP Laptops | Samsung Laptops |
+  Laptops Under 50000 | Laptops Under 40000 | Laptops Under 30000 | i5 Laptops | i7 Laptops
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">TVS</a> |
+ LG TVs | Sony TVs | Samsung TVs | Mi TVs | LED TVs | OLED TVs | Smart TVs | Android TVs | 4K TVs | 8K TVs |
+  LED TVs Under 15000 | Best TV Brands
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">LARGE APPLIANCES</a> |
+ Air Conditioners | Air Coolers | Microwave Ovens | Air Fryers | Refrigerators | Washing Machines | Water Purifiers |
+  Induction Stove | Water Geyser | Room Heaters | 1.5 Ton ACs | Dish Washers | Electric Cookers
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">CLOTHING</a> |
+ Sarees | Lehengas | Kurtas/Kurtis | Ethnic Sets | Women's Tops | Women's Night Suits | Women's Shirts | Women's T-shirts |
+  Women's Jeans | Gowns | Women's Trousers | Women's Sweaters | Women's Hoodies | Women's Jackets | Casual Shirts | Formal Shirts
+   | Men's T-shirts | Men's Jeans | Men's Trousers | Men's Track pants | Blazers | Men's Sweatshirts | Men's Sweaters
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">MOBILES </a> |
+ 4G Mobiles | Nokia Phones | Samsung Mobiles | Oppo Mobiles | Apple Phones | Realme Mobiles | Nothing Phones | OnePlus Mobiles | 
+Blackberry Phones | POCO Mobiles | Feature Mobile Phones | Redmi Phones | Motorola Mobiles | Mobile Phones Under 10000 | Mobile 
+Phones Under 15000 | Mobile Phones Under 20000 | Mobile Phones Under 25000 | 256 GB Mobiles | 512 GB Mobiles | 5.5 Inch Mobiles
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">FOOTWEAR</a> |
+Footwear | Kids Footwear | Men's Formal Shoes | Men's Casual Shoes | Men's Sneakers | Sports Shoes | Women's Sandals |
+  Women's Slippers & Flip Flops | Heels | Women's Sneakers | Women's Sports Shoes | Boys Shoes | Girls Shoes | Skechers Shoes | Crocs
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">GROCERIES </a> |
+ Staples | Snacks & Beverages | Packaged Foods | Household Care | Personal & Baby Care | Masalas & Spices | Dals & Pulses | Ghee 
+ & Oils | Dry Fruits, Nuts & Seeds | Chips & Namkeens | Cookies | Noodles & Pastas | Soft Drinks | Chocolates & Sweets | Repellants & Fresheners | Laundry Detergents
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">BEST SELLING ON FLIPKART </a> |
+ Chocolate Horlicks | Minimalist Face Cleanser | Garnier Vitamin C Face Serum | Motorola LED Smart Google TV | Simple Face Wash 
+ (Pack of 2) | Mamaearth Anti Hair Fall Shampoo | Whirlpool Semi Automatic Top Load Washing Machine (7.5kg, Black Grey) | Campus 
+ Running Shoes | LG Convection Microwave Oven | GoBoult Y1 Pro Bluetooth | Fastrack Analog Metal Strap Watch | Vivo V50 5G (256GB,
+  Titanium Grey) | Puma Running Shoes | Asus Vivobook Laptop | Kent Grand LED Water Purifier | V-Guard 400 5 ton AC | Boat 
+  Bluetooth Airdopes | Realme C71 (128GB, Obsidian Black) | Oneplus Nord Bluetooth Buds | Derma Co 2% Kojic Acid Face Serum | 
+  Apple iPhone 17 (256GB, Black) | Apple iPhone 16 Pro (128GB, Natural Titanium) | Nothing Phone a (128GB, Black) | Google Pixel
+   10 (256GB, Frost) | Apple iPhone 16 (128GB, White) | Motorola Edge 60 Fusion 5G (256GB, Pantone Amazonite) | Poco X7 Pro 5G 
+   (256GB, Obsidian Black) | Samsung Galaxy S24 Ultra 5G (256GB, Titanium Black) | Vivo T4X 5G (128GB, Marine Blue) | Apple
+    iPhone 17 Pro (256GB, Cosmic Orange) | iQOO Neo 10R 5G (128GB, Raging Blue) | Oppo F31 Pro 5G (128GB, Space Grey) | 
+    Oppo Reno 14 Pro 5G (256GB, Titanium Grey) | Samsung Galaxy S25 Ultra 5G (1024GB, Titanium Silverblue) | Vivo V60 5G (256GB,
+     Auspicious Gold) | Infinix Note 50S 5G (128GB, Titanium Grey) | Oneplus 15 5G (256GB, Sand Storm)
+</div>
+</div>
+</div>
+
+ <div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">FURNITURE</a> |
+ Furniture Store | Beds | Dining Table Sets | Wardrobes | TV Units & Cabinets | Office & Study Chairs | Office & Study Tables |
+  Sofa Sets | Mattress | Sofa Beds | Shoe Racks | Dressing Tables | Home Temples | Kitchen Cabinets | King Size Beds | Queen Size
+   Beds
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="footer-links">
+<a href="#">BGMH</a> |
+ Toys Online Store | Pens & Stationery | Beauty And Grooming | Makeup Kits | Body, Face & Skin Care | Perfumes | Books Online 
+ Store | Automotive Accessories | Car Accessories | Bike Accessories | Food Products | Health Care | Health Supplements | Sports 
+ Equipment | Exercise & Fitness Accessories | Baby Care | Household Supplies | Home Cleaning & Bathroom Accessories | Home Decor 
+ | Home Improvement Tools | Kitchen Cookware & Serveware | Wallpapers | Home Furnishings | Wall Decor | Tableware & Dinnerware |
+  Cookware Sets | Bed Linen & Blankets | Cushions & Pillows | Curtains | Festive Decor & Gifting
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- --------------------------------section 12-------------------------------------- -->
+
+<div class="container-fluid mt-3">
+  <div class="footer2">
+  <div class="row">
+    <div class="col-12">
+ <h6 class="fw-bold">Flipkart: India's Ultimate One-Stop Online Shopping Destination</h6>
+ <p>Welcome to Flipkart, India's trusted and beloved e-commerce platform, revolutionising online shopping since 2007. With over
+  200 million users, 150 million+ products across 80+ categories, and a relentless focus on customer satisfaction, Flipkart isn't
+   just an online store; it's your digital shopping companion. Be it the Flipkart app or the comprehensive Flipkart website, 
+   discover an unmatched universe of products, incredible Flipkart offers, blockbuster Flipkart sale events, and seamless service.
+    From the latest gadgets to daily groceries, fashion must-haves to furniture solutions, Flipkart is your definitive destination for
+     e-commerce in India, offering convenience, value, and reliability at every click. Experience the joy of buying online with India's 
+     homegrown leader!</p>
+
+     <h6 class="fw-bold">What Can You Buy from Flipkart?</h6>
+     <p>Flipkart's strength lies in its incredible diversity. With offerings for every need, aspiration, and budget, you can dive
+       into the meticulously curated categories for your needs:</p>
+     <h6 class="fw-bold">Mobile and Electronics:</h6>
+     <p>Flipkart has a wide range of mobiles with advanced features and the latest technology. As a leading e-commerce platform, we 
+      offer all the latest models from top brands. Explore the newest flagships from Samsung, Apple, OnePlus, Xiaomi, Vivo, Oppo, 
+      
+      and more. Find budget-friendly smartphones, 5G powerhouses, gaming phones, and refurbished options. Additionally, Flipkart 
+      Complete Mobile Protection offers comprehensive coverage for post-purchase issues, including door-to-door services. Complement 
+      your device with extensive accessories: durable back covers, screen protectors, fast chargers, power banks, wireless earbuds, 
+      smartwatches, fitness bands, and VR headsets.
+
+Check out different types of laptops to power your work, creativity, and entertainment. Shop a vast range of laptops like 
+ultraportables, gaming laptops, business notebooks, Chromebooks, and all-in-one PCs. Our Back To College Store segregates laptops
+ purpose-wise with recommendations from top brands and industry experts. You can also find a wide selection of tablets, bluetooth
+  speakers, and headphones from top brands. In addition, explore digital cameras, smart home devices, printers, security cameras,
+   powerful desktops and monitors to serve every purpose.</p>  
+
+   <h6 class="fw-bold">Home and Kitchen Appliances:</h6>
+   <p>Upgrade your home and kitchen appliances to make your days more comfortable and convenient. Discover stunning Smart TVs, home theatre systems, soundbars, and streaming devices. Invest in essential large appliances: energy-efficient refrigerators, washing machines, air conditioners, microwaves, water purifiers, air coolers, and geysers from trusted brands like LG, Samsung, Whirlpool, Godrej, and Voltas. Benefit from installation services and extended warranties. Flipkart has a massive collection of all the latest and trending range of these products. You can shop for your favourites among them at affordable prices. Additionally, our Dependable TV and Appliance Store ensures zero transit damage, with a replacement guarantee if anything goes wrong.
+
+Make daily chores effortless and enjoyable with modern kitchen appliances. Equip your kitchen with microwaves, mixer-grinders, air fryers, OTGs, electric kettles, induction cooktops, rice cookers, coffee makers, blenders, and sandwich makers. Keep your home spotless with robotic vacuum cleaners, handheld vacuums, steam mops, irons, and garment care. Enhance comfort with heaters, fans, and humidifiers. With the increase in pollution, make your home clean and hygienic with air purifiers.</p>
+  <h6 class="fw-bold">Fashion and Beauty:</h6>
+  <p>Flipkart, India ka Fashion Capital, is your one-stop destination for anything and everything you need to look good. Express your unique style. Explore an enormous collection of clothing for men, women, and kids. You can choose from ethnic wear, western wear, activewear, nightwear, and innerwear. You can find footwear for every occasion and accessorise your outfits with handbags, watches, sunglasses, belts, and jewellery.
+
+Beauty and grooming products for everyone are available on Flipkart. Choose from a comprehensive range of skincare, makeup, haircare, fragrances, men's grooming, salon-style tools, and personal care essentials. You can choose offerings from top Indian and international brand.</p>
+  <h6 class="fw-bold">Home and Furniture:</h6>
+  <p>Upgrade the decor and functionality of your home with various items for home decor, options for home lighting, and equipment for home improvement. Furnish all the rooms in your home with exquisite offerings available for living rooms, bedrooms, dining rooms, study, and outdoor spaces. Explore modern home decor options like curtains, cushions, rugs, lamps, clocks, wall paintings, mirrors, photo frames, and decorative items.</p>
+</div>
+ </div>
+ </div>
+</div>
+
+<!-- ---------------------------------------last section------------------------------------------- -->
+
+<footer class="footer pt-5">
+<div class="container">
+
+<div class="row">
+
+<!-- ABOUT -->
+<div class="col-6 col-md-2 mb-4">
+<div class="footer-heading">About</div>
+<a href="#">Contact Us</a>
+<a href="#">About Us</a>
+<a href="#">Careers</a>
+<a href="#">Flipkart Stories</a>
+<a href="#">Press</a>
+<a href="#">Corporate Information</a>
+</div>
+
+<!-- GROUP COMPANIES -->
+<div class="col-6 col-md-2 mb-4">
+<div class="footer-heading">Group Companies</div>
+<a href="#">Myntra</a>
+<a href="#">Cleartrip</a>
+<a href="#">Shopsy</a>
+</div>
+
+<!-- HELP -->
+<div class="col-6 col-md-2 mb-4">
+<div class="footer-heading">Help</div>
+<a href="#">Payments</a>
+<a href="#">Shipping</a>
+<a href="#">Cancellation & Returns</a>
+<a href="#">FAQ</a>
+</div>
+
+<!-- CONSUMER POLICY -->
+<div class="col-6 col-md-2 mb-4">
+<div class="footer-heading">Consumer Policy</div>
+<a href="#">Cancellation & Returns</a>
+<a href="#">Terms Of Use</a>
+<a href="#">Security</a>
+<a href="#">Privacy</a>
+<a href="#">Sitemap</a>
+<a href="#">Grievance Redressal</a>
+<a href="#">EPR Compliance</a>
+<a href="#">FSSAI Food Safety Connect App</a>
+</div>
+
+<!-- MAIL + REGISTERED -->
+<div class="col-md-4 mb-4">
+<div class="footer-heading">Mail Us:</div>
+<p class="mb-2 text-white-50">
+Flipkart Internet Private Limited,<br>
+Buildings Alyssa, Begonia &<br>
+Clove Embassy Tech Village,<br>
+Outer Ring Road, Devarabeesanahalli Village,<br>
+Bengaluru, 560103,<br>
+Karnataka, India
+</p>
+
+<div class="footer-heading mt-3">Social:</div>
+<div class="social-icons">
+<i class="bi bi-facebook"></i>
+<i class="bi bi-twitter-x"></i>
+<i class="bi bi-youtube"></i>
+<i class="bi bi-instagram"></i>
+</div>
+
+<div class="footer-heading mt-4">Registered Office Address:</div>
+<p class="text-white-50">
+Flipkart Internet Private Limited,<br>
+Buildings Alyssa, Begonia &<br>
+Clove Embassy Tech Village,<br>
+Outer Ring Road, Devarabeesanahalli Village,<br>
+Bengaluru, 560103,<br>
+Karnataka, India<br>
+CIN : U51109KA2012PTC066107<br>
+Telephone: 044-45614700 / 044-67415800
+</p>
+</div>
+
+</div>
+
+<!-- Bottom Row -->
+<div class="footer-bottom">
+<div class="row text-center text-md-start align-items-center">
+
+<div class="col-md-8 mb-2 mb-md-0">
+<span class="me-4">Become a Seller</span>
+<span class="me-4">Advertise</span>
+<span class="me-4">Gift Cards</span>
+<span>Help Center</span>
+</div>
+
+<div class="col-md-4 text-md-end">
+© 2007-2026 Flipkart.com
+</div>
+
+</div>
+</div>
+
+</div>
+</footer>
+</div>
+</body>
+</html>

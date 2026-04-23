@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5500/flipkart.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart project</title>
+  <link href="./Flipkart project_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="./Flipkart project_files/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .navbar {
+      height: 64px;
+    }
+
+    .navbar-brand small {
+      font-size: 16px;
+      margin-top: -4px;
+    }
+
+    .form-control::placeholder {
+      font-size: 18px;
+    }
+
+    .input-group-text {
+      padding-left: 14px;
+    }
+
+    .nav-item {
+      font-size: 18px;
+    }
+
+    .nav-link {
+      color: #000;
+    }
+
+    .nav-link:hover {
+      color: #2874f0;
+    }
+
+    .category-item {
+      cursor: pointer;
+    }
+
+    .category-item img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 6px;
+    }
+
+    .category-item p {
+      font-size: 14px;
+      font-weight: 500;
+      color: #212121;
+      margin: 0;
+    }
+
+    .category-item:hover p {
+      color: #2874f0;
+    }
+    /* Carousel heading */
+.carousel-inner2{
+  height: 280px;
+  /* border: 1px solid blue;  */
+  width: 90%;
+  margin: auto;
+ }
+   .carousel-inner2 img{
+    object-fit: contain;
+    height: 200px;
+    width: 200px;
+    
+  }
+  
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  align-items: center;
+  background-color: rgb(141, 133, 133);
+  border: none;
+  border-radius: 50%; 
+  color: rgb(244, 240, 240);
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  position: absolute;
+  text-decoration: none;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+  width: 40px;
+z-index: 10;
+  }
+  </style>
+</head>
+
+<body>
+  <script src="./Flipkart project_files/bootstrap.bundle.min.js.download" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+  <nav class="navbar navbar-expand-md bg-white shadow-sm px-3">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex flex-column lh-1" href="http://127.0.0.1:5500/flipkart.html#">
+        <img src="./Flipkart project_files/fkheaderlogo_exploreplus-11f9e2.svg">
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Content -->
+      <div class="collapse navbar-collapse" id="fkNavbar">
+
+        <!-- Search -->
+        <form class="d-flex flex-grow-1 mx-lg-4 my-2 my-lg-0">
+          <div class="input-group">
+            <span class="input-group-text bg-light border-0">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="search" class="form-control border-0 bg-light" placeholder="Search for Products, Brands and More">
+          </div>
+        </form>
+
+        <!-- Right Menu -->
+        <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle fw-semibold" href="http://127.0.0.1:5500/flipkart.html#" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle me-1"></i> Login
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">My Profile</a></li>
+              <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Orders</a></li>
+              <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Logout</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="http://127.0.0.1:5500/flipkart.html#">
+              <i class="bi bi-cart3 me-1"></i> Cart
+            </a>
+          </li>
+
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link fw-semibold" href="http://127.0.0.1:5500/flipkart.html#">
+              <i class="bi bi-shop me-1"></i> Become a Seller
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5500/flipkart.html#">
+              <i class="bi bi-three-dots-vertical"></i>
+              
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ============================= section-2=============================== -->
+
+  <div class="container-fluid bg-white shadow-sm py-3 ">
+    <div class="row justify-content-center text-center g-4">
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="./Flipkart project_files/item-1.webp" alt="Minutes">
+          <p>Minutes</p>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="./Flipkart project_files/item-2.webp" alt="Mobiles">
+          Mobiles&amp; Tablets
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+            <img src="./Flipkart project_files/item-5.webp" alt="Fashion">
+          <a class="nav-link dropdown-toggle fw-semibold" href="http://127.0.0.1:5500/flipkart.html#" data-bs-toggle="dropdown">
+          
+            Fashion
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Men's Top Wear</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">men's Bottom Wear</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Women Ethinic</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Men Footwear</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Women footWear</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Watch and Accessories</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> women Western</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Bags. Suitcse $ Luggage</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Kids</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Essentials</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Winter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+           <img src="./Flipkart project_files/item-4.webp" alt="Electronics">
+          <a class="nav-link dropdown-toggle fw-semibold" href="http://127.0.0.1:5500/flipkart.html#" data-bs-toggle="dropdown">
+           Electronics
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Audio</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Electronic GST Store</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Cameras &amp; Accessories</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">computer&amp; Peripherals</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Gaming</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Health &amp; Personal care</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Laptop Accessories</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Laptop and Desktop</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Mobile Accessory</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Powerbank</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Smart home Automation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="./Flipkart project_files/item-3.webp" alt="TV">
+          <p>TVs &amp; Appliances</p>
+        </div>
+      </div>
+
+
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="./Flipkart project_files/item-6.webp" alt="Home">
+  <a class="nav-link dropdown-toggle fw-semibold" href="http://127.0.0.1:5500/flipkart.html" data-bs-toggle="dropdown">
+          Home &amp; <br>
+          Kitchen  </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Decore</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Furniture</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">sofas</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Blanket</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Gaming</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Wallpaper</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Dining</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Bath linen</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Cleaning </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Pooja</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Cookware</a></li>
+            <li><a class="dropdown-menu" href="http://127.0.0.1:5500/flipkart.html"> Lighting</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Containers</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="./Flipkart project_files/item-7.webp" alt="Beauty">
+          <a class="nav-link dropdown-toggle fw-semibold" href="http://127.0.0.1:5500/flipkart.html#" data-bs-toggle="dropdown">
+          Beauty &amp; Toys </a>
+          <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Skin care</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Hair care</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Baby bath </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">bath spa</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Perfume</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">face</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> oral care</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">lips</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Gifting  </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Derma</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Cookware</a></li>
+            <li><a class="dropdown-menu" href="http://127.0.0.1:5500/flipkart.html"> Gaming</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">remod controls</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="">
+          <img src="./Flipkart project_files/item-8.webp" alt="Furniture">
+          <a class="nav-link dropdown-toggle fw-semibold" href="http://127.0.0.1:5500/flipkart.html" data-bs-toggle="dropdown">
+          Furniture</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Office chair</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Bed</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">TV units</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Dining sets</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">lips</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Outdoor </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">office table</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Dressing Table </a></li>
+            <li><a class="dropdown-menu" href="http://127.0.0.1:5500/flipkart.html"> Sofs beds</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">side table </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Matteresses</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Recliners</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Kid seting</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Coffe Table</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Shoe racks </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Laptop table</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> wardrobes</a></li>
+            <li><a class="dropdown-menu" href="http://127.0.0.1:5500/flipkart.html"> sofas</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">collapsible wardrobe</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="./Flipkart project_files/item-9.webp" alt="Flights">
+          <p>Flight Bookings</p>
+         
+        </div>
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+        <div class="category-item">
+          <img src="./Flipkart project_files/item-10.webp" alt="Grocery">
+          <a class="nav-link dropdown-toggle fw-semibold" href="http://127.0.0.1:5500/flipkart.html" data-bs-toggle="dropdown">
+          Grocery </a>
+         <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> Oil</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Rice</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">chocolate</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> flour</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">spices</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">coffee pawder  </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Tea powder</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> sugar </a></li>
+            <li><a class="dropdown-menu" href="http://127.0.0.1:5500/flipkart.html"> Ghee</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Dry fruits </a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">Butter</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">curd</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#"> seeds</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">souces</a></li>
+            <li><a class="dropdown-item" href="http://127.0.0.1:5500/flipkart.html#">peaniuts</a></li>
+        </ul></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ------------------section-3 ------------------------------- -->
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="./Flipkart project_files/poster-2.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./Flipkart project_files/poster-3.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./Flipkart project_files/poster-1.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./Flipkart project_files/poater-4.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item active">
+        <img src="./Flipkart project_files/poster-6.webp" class="d-block w-100" alt="...">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- ---------------------------section-4-------------------------------------- -->
+   <div class="container-fluid my-5">
+    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-inner2">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-3">
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px; height: 280px; border:none">
+                <img src="./Flipkart project_files/deal-1.webp" class="card-img-top">
+                <div class="card-body text-center">
+                  Product 1
+                  <h5>₹999</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="./Flipkart project_files/deal-2.webp">
+                <div class="card-body text-center">
+                  <h6>Product 2</h6>
+                  <p>₹1299</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px;height: 280px; border: none;">
+                <img src="./Flipkart project_files/deal-3.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="./Flipkart project_files/deal-4.webp">
+                <div class="card-body text-center">
+                  <h6>Product 4</h6>
+                  <p>₹1499</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-3">
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px;height: 280px; border: none;">
+                <img src="./Flipkart project_files/deal-5.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+           <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="./Flipkart project_files/deal-6.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px;height: 280px; border: none;">
+                <img src="./Flipkart project_files/deal-7.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card" style="width: 200px; height: 280px; border: none;">
+                <img src="./Flipkart project_files/deal-8.webp">
+                <div class="card-body text-center">
+                  <h6>Product 3</h6>
+                  <p>₹899</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+     
+      </div>
+  </div>
+
+  
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
