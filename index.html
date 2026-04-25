@@ -59,48 +59,75 @@
    
 
   .card2 {
-   display: flex;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
     justify-content: center;
-  }
+}
 
-  .card2-img img {
+.card2-img img {
     height: 260px;
+    width: 100%;
     object-fit: contain;
-   }
+}
 
-  .deal{
+/* Left Section */
+.deal {
     height: 700px;
-    /* border: 1px solid red; */
-     padding: 5%;
-     background-color: rgb(246, 240, 240);
-    object-fit: contain;
-  }
-  .card{
-    height: 300px;
-   /* border: 1px solid saddlebrown;   */
-    object-fit: cover;
+    padding: 20px;
+    background-color: rgb(246, 240, 240);
+}
+
+/* All cards equal height */
+.card {
+    height: 100%;
+    min-height: 300px;
+    border: 1px solid #ddd;
     padding: 5px;
-  }
-  .card img{
-   /* border: 1px solid green;  */ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+}
+
+/* Same image height for all cards */
+.card img {
+    height: 220px;
+    width: 100%;
     object-fit: contain;
-     position: relative;
-    top: 20px; 
-   width: 100%;
-    height: 160px;
-  }
-  .deal2{
+    padding: 15px;
+}
+
+/* Card body aligned properly */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card-text {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Right Banner Section */
+.deal2 {
     height: 700px;
     background-color: rgb(246, 240, 240);
-    object-fit: contain;
     padding: 10px;
-  }
-  .deal2 img{
-    height: 100%;
+}
+
+/* Banner image full fit */
+.deal2 img {
     width: 100%;
-  }
+    height: 100%;
+    object-fit: cover;
+}
  
   .footer-title{
     font-weight:600;
@@ -125,36 +152,62 @@
 }
 
 
-.product{
-  width:90%;
-  margin:auto;
+.product {
+  width: 90%;
+  margin: auto;
 }
 
-.carousel-item{
-  padding:5px;
+.product-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 
-.card3{
-  height:200px;
-  border:none;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+.product-col {
+  flex: 0 0 calc(50% - 10px);
+
 }
 
-.card3 img{
-  height:150px;
-  object-fit:contain;
-  padding:10px;
+.card3 {
+  height: 200px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card3 img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+ 
+}
+
+.card3 .card-body {
+  padding: 5px;
+}
+
+.card3 h6 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.carousel-item {
+  padding: 5px;
 }
 
 .carousel-control-prev,
-.carousel-control-next{
-  width:40px;
-  height:40px;
-  background:#ddd;
-  border-radius:50%;
-  top:50%;
-  transform:translateY(-50%);
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
+/* Tablet */
+
 
 .footer2{
   color: rgb(102, 101, 101);
@@ -211,6 +264,56 @@
 }
 
 
+.travel-banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+@media (max-width: 576px) {
+  .card img {
+    height: 150px;
+    padding: 10px;
+  }
+
+  .deal {
+    padding: 12px !important;
+  }
+  .travel-banner {
+    height: 160px;
+  }
+}
+@media (min-width: 576px) {
+  .product-col {
+    flex: 0 0 calc(33.333% - 10px);
+  }
+}
+
+/* Medium screen */
+@media (min-width: 768px) {
+  .product-col {
+    flex: 0 0 calc(25% - 10px);
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .product-col {
+    flex: 0 0 calc(16.666% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .deal,
+  .deal2 {
+    min-height: auto;
+    height: auto;
+  }
+
+  .deal2 img {
+    height: auto;
+    object-fit: contain;
+  }
+}
   </style>
 </head>
 
@@ -507,248 +610,144 @@
   </div>
 
   <!-- ---------------------------section-4-------------------------------------- -->
-   <!-- <div class="container-fluid mt-3">
-    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+  
+ <div class="product mt-4">
+  <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
 
-      <div class="carousel-inner2">
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active">
+        <div class="product-row">
 
-       
-        <div class="carousel-item active">
-          <div class="row g-3">
-            <div class="col-3">
-              <div class="card" style="width: 200px; height: 280px; border:none">
-                <img src="image/deal-1.webp" class="card-img-top">
-                <div class="card-body text-center">
-                  Product 1
-                  <h5>₹999</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="card" style="width: 200px; height: 280px; border: none;">
-                <img src="image/deal-2.webp">
-                <div class="card-body text-center">
-                  <h6>Product 2</h6>
-                  <p>₹1299</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-3 ">
-              <div class="card"  style="width: 200px;height: 280px; border: none;">
-                <img src="image/deal-3.webp">
-                <div class="card-body text-center">
-                  <h6>Product 3</h6>
-                  <p>₹899</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-3 ">
-              <div class="card" style="width: 200px; height: 280px; border: none;">
-                <img src="image/deal-4.webp">
-                <div class="card-body text-center">
-                  <h6>Product 4</h6>
-                  <p>₹1499</p>
-                </div>
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-1.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Portable Projector</h6>
               </div>
             </div>
           </div>
-        </div>
 
-       
-        <div class="carousel-item active ">
-          <div class="row g-3">
-            <div class="col-3 ">
-              <div class="card" style="width: 200px;height: 280px; border: none;">
-                <img src="image/deal-5.webp">
-                <div class="card-body text-center">
-                  <h6>Product 3</h6>
-                  <p>₹899</p>
-                </div>
-              </div>
-            </div>
-           <div class="col-3">
-              <div class="card" style="width: 200px; height: 280px; border: none;">
-                <img src="image/deal-6.webp">
-                <div class="card-body text-center">
-                  <h6>Product 3</h6>
-                  <p>₹899</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="card" style="width: 200px;height: 280px; border: none;">
-                <img src="image/deal-7.webp">
-                <div class="card-body text-center">
-                  <h6>Product 3</h6>
-                  <p>₹899</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-3 ">
-              <div class="card" style="width: 200px; height: 280px; border: none;">
-                <img src="image/deal-8.webp">
-                <div class="card-body text-center">
-                  <h6>Product 3</h6>
-                  <p>₹899</p>
-                </div>
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-2.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Bluetooth Speaker</h6>
               </div>
             </div>
           </div>
-        </div>
 
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-3.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>HD IPS Monitor</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-4.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Dell LCD Monitor</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-5.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Digital Mirrorless Camera</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-6.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Samsung Smartwatch</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-   
-       <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-     </div>
-    </div>  -->
+      <!-- SLIDE 2 -->
+      <div class="carousel-item">
+        <div class="product-row">
 
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-7.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Canon Camera</h6>
+              </div>
+            </div>
+          </div>
 
-    <div class="product mt-4">
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-8.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>OnePlus Earbuds</h6>
+              </div>
+            </div>
+          </div>
 
-<div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/deal-9.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Canon Printer</h6>
+              </div>
+            </div>
+          </div>
 
-<div class="carousel-inner">
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/new1.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>iPad Tablet</h6>
+              </div>
+            </div>
+          </div>
 
-<!-- SLIDE 1 -->
-<div class="carousel-item active">
-<div class="row g-2">
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/nwe-2.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Acoustic Guitar</h6>
+              </div>
+            </div>
+          </div>
 
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-1.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 1</h6>
-</div>
-</div>
-</div>
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/new3.webp" class="card-img-top">
+              <div class="card-body">
+                <h6>Bella Vita Perfume</h6>
+              </div>
+            </div>
+          </div>
 
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-2.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 2</h6>
-</div>
-</div>
-</div>
+        </div>
+      </div>
 
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-3.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 3</h6>
-</div>
-</div>
-</div>
+    </div>
 
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-4.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 3</h6>
-</div>
-</div>
-</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
 
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-5.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 3</h6>
-</div>
-</div>
-</div>
+    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
 
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-6.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 4</h6>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- SLIDE 2 -->
-<div class="carousel-item">
-<div class="row g-2">
-
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-7.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 5</h6>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-8.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 6</h6>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/deal-9.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 7</h6>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/new1.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 3</h6>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/nwe-2.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 3</h6>
-</div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-2">
-<div class="card3">
-<img src="image/new3.webp" class="card-img-top">
-<div class="card-body">
-<h6>Card 8</h6>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-
-<button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-<span class="carousel-control-prev-icon"></span>
-</button>
-
-<button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-<span class="carousel-control-next-icon"></span>
-</button>
-
-</div>
+  </div>
 </div>
 
   <!-- ---------------------------section-5-------------------------------------- -->
@@ -821,119 +820,130 @@
     <!-- ----------------------------------section-6--------------------------------------- -->
 
     <div class="container-fluid py-3">
-      <div class="row g-4" >
-    <!-- ----------------------------col-1 -------------------------- -->
-         <div class="col-lg-4 col-md-6 col-sm-12">
-         <div class="deal"> 
-          <div class="col-12 mb-3"> <h4>Laptop for you </h4></div>
-           <div class="row g-2">
-           
-           <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/laptop-1.webp" class="card-img-top" alt="">
-                <div class="card-body">
-                <p class="card-title mt-3"> 0% interest </p>
-                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
-                </div>
-              </div>
-              </div>
+  <div class="row g-4">
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/laptop-7.webp" class="card-img-top">
-                <div class="card-body mt-3">
-                <p class="card-title"> 0% interest </p>
-                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
-                </div>
-                </div>
-              </div>
-              </div>
-          
-            <div class="row g-2 mt-2">
+    <!-- ---------------- col-1 ---------------- -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="deal p-4 bg-white h-100">
 
-              <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/laptop-3.webp" class="card-img-top">
-              <div class="card-body mt-3">
-                <p class="card-title"> Top Rated</p>
-                <h6 class="card-text" style="color: green;">4 Star and Above</h6>
-                </div>
-              </div>
-              </div>
+        <h4 class="mb-3">Top Furniture</h4>
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/laptop-4.webp">
-                <div class="card-body mt-3">
-                <p class="card-title"> Best Discount</p>
-                <h6 class="card-text" style="color: green;"> min 70% off</h6>
-                </div>
-                </div>
-              </div>
-             </div>
-             </div>
-             </div>
-          <!-- ----------------------col 2------------------------------- -->
-         
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="deal">
-              <div class="col-12"> <h4> Tops Picks for you </h4></div>
-           <div class="row g-2">
-           
-           <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/toy-1.webp" class="card-img-top" alt="">
-                <div class="card-body">
-                <p class="card-title mt-3"> Remod control Toy</p>
-                <h6 class="card-text" style="color: green;"> Spacial Offer</h6>
-                </div>
-              </div>
-              </div>
+        <div class="row g-3">
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/toy-2.webp" class="card-img-top">
-                <div class="card-body mt-3">
-                <p class="card-title"> Electric cycle </p>
-                <h6 class="card-text" style="color: green;"> min 40% off</h6>
-                </div>
-                </div>
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/laptop-1.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">0% Interest</p>
+                <h6 class="card-text text-success">No Cost EMI</h6>
               </div>
-              </div>
-          
-               <div class="row g-2 mt-2">
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/toy-3.webp" class="card-img-top">
-              <div class="card-body mt-3">
-                <p class="card-title"> Fitness kit</p>
-                <h6 class="card-text" style="color: green;"> special offer</h6>
-                </div>
-              </div>
-              </div>
-
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/toy-4.webp">
-                <div class="card-body mt-3">
-                <p class="card-title"> Outdoor Toys </p>
-                <h6 class="card-text" style="color: green;"> min 50% off</h6>
-                </div>
-                </div>
-              </div>
-             </div>
             </div>
           </div>
 
-<!-- ---------------------------------col-3---------------------------------------- -->
- 
-<div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="deal2">
-              <img src="image/section3.webp"> 
-              
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/laptop-7.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">0% Interest</p>
+                <h6 class="card-text text-success">No Cost EMI</h6>
+              </div>
             </div>
-           </div>
           </div>
+
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/laptop-3.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">Men's Casual Shoes</p>
+                <h6 class="card-text text-success">Min 70% Off</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/laptop-4.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">Men's Casual Shoes</p>
+                <h6 class="card-text text-success">Min 70% Off</h6>
+              </div>
+            </div>
+          </div>
+
         </div>
-  
+
+      </div>
+    </div>
+
+    <!-- ---------------- col-2 ---------------- -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="deal p-4 bg-white h-100">
+
+        <h4 class="mb-3">Top Picks for You</h4>
+
+        <div class="row g-3">
+
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/toy-1.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">Remote Control Toy</p>
+                <h6 class="card-text text-success">Special Offer</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/toy-2.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">Electric Cycle</p>
+                <h6 class="card-text text-success">Min 40% Off</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/toy-3.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">Fitness Kit</p>
+                <h6 class="card-text text-success">Special Offer</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card h-100">
+              <img src="image/toy-4.webp" class="card-img-top" alt="">
+              <div class="card-body">
+                <p class="card-title">Outdoor Toys</p>
+                <h6 class="card-text text-success">Min 50% Off</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ---------------- col-3 ---------------- -->
+    <div class="col-lg-4 col-md-12 col-12">
+      <div class="deal2 bg-white">
+        <img src="image/section3.webp" class="img-fluid w-100 h-100" alt="">
+      </div>
+    </div>
+
+
+  </div>
+</div>
   <!-- ---------------------------------section7---------------------------------------       -->
   <div class="container-fluid ">
 
     <div class="row g-3">
       <div class="col-lg-12 col-md-12 col-sm-12 mb-4">
-        <img src="image/flipkart traval.webp" style="width: 100%; height: 300px;">
+        <img src="image/flipkart traval.webp" class="travel-banner">
       </div>
     </div>
       <div class="row g-3">
@@ -982,263 +992,332 @@
 
        <!-- ===================section8======================== -->
 
-        <div class="container-fluid py-3">
-      <div class="row g-4" >
-    <!-- ----------------------------col-1 -------------------------- -->
-         <div class="col-lg-4 col-md-6 col-sm-12">
-         <div class="deal"> 
-          <div class="col-lg-12 col-mb-12 col-sm-12 mb-3"> <h4>Top Furniture</h4></div>
-           <div class="row g-2">
-           
-           <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/furniture-1.webp" class="card-img-top" alt="">
-                <div class="card-body">
-                <p class="card-title mt-3"> 0% interest </p>
-                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
-                </div>
-              </div>
-              </div>
+       <div class="container-fluid py-3">
+  <div class="row g-4">
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/furniture-2.webp" class="card-img-top">
-                <div class="card-body mt-3">
-                <p class="card-title"> 0% interest </p>
-                <h6 class="card-text" style="color: green;"> No Cost EMI</h6>
-                </div>
-                </div>
-              </div>
-              </div>
-          
-            <div class="row g-2 mt-2">
+    <!-- ---------------- col-1 ---------------- -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="deal">
 
-              <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/furniture-3.webp" class="card-img-top">
-              <div class="card-body mt-3">
-                <p class="card-title"> Men's Casual Shoes</p>
-                <h6 class="card-text" style="color: green;"> min 70% off</h6>
-                </div>
-              </div>
-              </div>
+        <h4 class="mb-3">Top Furniture</h4>
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/furfurniture-4.webp">
-                <div class="card-body mt-3">
-                <p class="card-title"> Men's Casual Shoes</p>
-                <h6 class="card-text" style="color: green;"> min 70% off</h6>
-                </div>
-                </div>
-              </div>
-             </div>
-             </div>
-             </div>
-          <!-- ----------------------col 2------------------------------- -->
-         
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="deal">
-              <div class="col-lg-12 col-mb-12 col-sm-12 mb-3"> <h4> Tops Picks for you </h4></div>
-           <div class="row g-2">
-           
-           <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/fasion-1.webp" class="card-img-top" alt="">
-                <div class="card-body">
-                <p class="card-title mt-3"> Remod control Toy</p>
-                <h6 class="card-text" style="color: green;"> Spacial Offer</h6>
-                </div>
-              </div>
-              </div>
+        <div class="row g-2">
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/fasion-2.webp" class="card-img-top">
-                <div class="card-body mt-3">
-                <p class="card-title"> Electric cycle </p>
-                <h6 class="card-text" style="color: green;"> min 40% off</h6>
-                </div>
-                </div>
+          <div class="col-6">
+            <div class="card">
+              <img src="image/furniture-1.webp" class="card-img-top" alt="Furniture 1">
+              <div class="card-body">
+                <p class="card-title">0% Interest</p>
+                <h6 class="card-text text-success">No Cost EMI</h6>
               </div>
-              </div>
-          
-               <div class="row g-2 mt-2">
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/fastion-3.webp" class="card-img-top">
-              <div class="card-body mt-3">
-                <p class="card-title"> Fitness kit</p>
-                <h6 class="card-text" style="color: green;"> special offer</h6>
-                </div>
-              </div>
-              </div>
-
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/fastion-4.webp">
-                <div class="card-body mt-3">
-                <p class="card-title"> Outdoor Toys </p>
-                <h6 class="card-text" style="color: green;"> min 50% off</h6>
-                </div>
-                </div>
-              </div>
-             </div>
             </div>
           </div>
 
-<!-- ---------------------------------col-3---------------------------------------- -->
- 
-<div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="deal2">
-              <img src="image/1111111.webp"> 
-              
+          <div class="col-6">
+            <div class="card">
+              <img src="image/furniture-2.webp" class="card-img-top" alt="Furniture 2">
+              <div class="card-body">
+                <p class="card-title">0% Interest</p>
+                <h6 class="card-text text-success">No Cost EMI</h6>
+              </div>
             </div>
-           </div>
           </div>
-        </div>
-     
-        <!-- ========================section-9====================== -->
-         <div class="container-fluid ">
 
-        <div class="row g-3">
-       
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-1.webp"></div>
+          <div class="col-6">
+            <div class="card">
+              <img src="image/furniture-3.webp" class="card-img-top" alt="Furniture 3">
+              <div class="card-body">
+                <p class="card-title">Wardrobe</p>
+                <h6 class="card-text text-success">Min 70% Off</h6>
+              </div>
             </div>
-         </div> 
+          </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-2.webp"></div>
+          <div class="col-6">
+            <div class="card">
+              <img src="image/furfurniture-4.webp" class="card-img-top" alt="Furniture 4">
+              <div class="card-body">
+                <p class="card-title">Home Temple</p>
+                <h6 class="card-text text-success">Min 70% Off</h6>
+              </div>
             </div>
-         </div>
+          </div>
 
-         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-3.webp"></div>
-            </div>
-         </div>
-        </div>
-        <!-- -------------------------col-2------------------------------------- -->
-
-         <div class="row g-3 mt-1">
-       
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-7.webp"></div>
-            </div>
-         </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-8.webp"></div>
-            </div>
-         </div>
-
-         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-9.webp"></div>
-            </div>
-         </div>
         </div>
 
-        <div class="row g-3 mt-1">
-       
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-10.webp"></div>
-            </div>
-         </div>
+      </div>
+    </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-11.webp"></div>
-            </div>
-         </div>
+    <!-- ---------------- col-2 ---------------- -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="deal">
 
-         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-12.webp"></div>
+        <h4 class="mb-3">Top Picks for You</h4>
+
+        <div class="row g-2">
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/fasion-1.webp" class="card-img-top" alt="Fashion 1">
+              <div class="card-body">
+                <p class="card-title">Trendy Outfit</p>
+                <h6 class="card-text text-success">Special Offer</h6>
+              </div>
             </div>
-         </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/fasion-2.webp" class="card-img-top" alt="Fashion 2">
+              <div class="card-body">
+                <p class="card-title">Casual Wear</p>
+                <h6 class="card-text text-success">Min 40% Off</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/fastion-3.webp" class="card-img-top" alt="Fashion 3">
+              <div class="card-body">
+                <p class="card-title">Fitness Kit</p>
+                <h6 class="card-text text-success">Special Offer</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/fastion-4.webp" class="card-img-top" alt="Fashion 4">
+              <div class="card-body">
+                <p class="card-title">Outdoor Toys</p>
+                <h6 class="card-text text-success">Min 50% Off</h6>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="row g-3 mt-1">
-       
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-13.webp"></div>
-            </div>
-         </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-14.webp"></div>
-            </div>
-         </div>
+      </div>
+    </div>
 
-         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card2">
-              <div class="card2-img"> <img src="image/promo-15.webp"></div>
+    <!-- ---------------- col-3 ---------------- -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="deal2">
+        <img src="image/1111111.webp" class="img-fluid w-100 h-100" alt="Fashion Banner">
+      </div>
+    </div>
+
+  </div>
+</div>
+ <!-- ========================section-9====================== -->
+
+ <div class="product mt-4">
+  <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <h3>Home Decore Items </h3>
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active">
+        <div class="product-row">
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-1.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Home Decor Showpiece</h6>
+              </div>
             </div>
-         </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-12.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Wall Mirror</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-4.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Wall Shelf Decor</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-13.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Designer Mirror</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-5.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Floor Lamp</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-6.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Bedroom Lamp</h6>
+              </div>
+            </div>
+          </div>
+
         </div>
-       </div>
-       </div>
+      </div>
 
+      <!-- SLIDE 2 -->
+      <div class="carousel-item">
+        <div class="product-row">
 
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-15.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Round Wall Mirror</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-2.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Wall Shelf Decor</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-8.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Designer Floor Lamp</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-9.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Ceiling Light</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-5.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Floor Lamp</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-col">
+            <div class="card3">
+              <img src="image/home-3.jpg" class="card-img-top">
+              <div class="card-body">
+                <h6>Wall Painting Frame</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+   </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</div>
+
+        
  <!-- =============================section10============================       -->
 
- <div class="container-fluid py-3">
-      <div class="row g-4" >
-    <!-- ----------------------------col-1 -------------------------- -->
-         <div class="col-lg-4 col-md-6 col-sm-12">
-         <div class="deal"> 
-          <div class="col-lg-12 col-mb-12 col-sm-12 mb-3"> <h4>Best Value Deals on You</h4></div>
-           <div class="row g-2">
-           
-           <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/earphone.webp" class="card-img-top" alt="">
-                <div class="card-body">
-                <p class="card-title mt-3"> True Wireless</p>
-                <h6 class="card-text" style="color: green;">  min 50% off</h6>
-                </div>
-              </div>
-              </div>
+<div class="container-fluid py-3">
+  <div class="row g-4">
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/soes.webp" class="card-img-top">
-                <div class="card-body mt-3">
-                <p class="card-title"> Men's Casual Shoes</p>
-                <h6 class="card-text" style="color: green;"> min 70% off</h6>
-                </div>
-                </div>
-              </div>
-              </div>
-          
-            <div class="row g-2 mt-2">
+    <!-- ---------------- col-1 ---------------- -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="deal">
 
-              <div class="col-lg-6 col-mb-6 col-sm-6">
-              <div class="card"> <img src="image/watch.webp" class="card-img-top">
-              <div class="card-body mt-3">
-                <p class="card-title"> Wrist Watch</p>
-                <h6 class="card-text" style="color: green;"> min 90% off</h6>
-                </div>
-              
-              </div>
-              </div>
+        <h4 class="mb-3">Best Value Deals on You</h4>
 
-               <div class="col-lg-6 col-mb-6 col-sm-6">
-                 <div class="card"> <img src="image/bag.webp">
-                <div class="card-body mt-3">
+        <div class="row g-2">
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/earphone.webp" class="card-img-top" alt="True Wireless">
+              <div class="card-body">
+                <p class="card-title">True Wireless</p>
+                <h6 class="card-text text-success">Min 50% Off</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/soes.webp" class="card-img-top" alt="Men's Casual Shoes">
+              <div class="card-body">
+                <p class="card-title">Men's Casual Shoes</p>
+                <h6 class="card-text text-success">Min 70% Off</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/watch.webp" class="card-img-top" alt="Wrist Watch">
+              <div class="card-body">
+                <p class="card-title">Wrist Watch</p>
+                <h6 class="card-text text-success">Min 90% Off</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+              <img src="image/bag.webp" class="card-img-top" alt="Laptop Bag">
+              <div class="card-body">
                 <p class="card-title">Laptop Bag</p>
-                <h6 class="card-text" style="color: green;"> min 70% off</h6>
-                </div>
-                </div>
+                <h6 class="card-text text-success">Min 70% Off</h6>
               </div>
-             </div>
-             </div>
-             </div>
-             
-             <div class="col-lg-8 col-md-12 col-sm-12">
-              <div class="deal2">
-                <img src="image/mob.webp"> 
-              </div>
-             </div>
+            </div>
+          </div>
 
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ---------------- col-2 banner ---------------- -->
+    <div class="col-lg-8 col-md-6 col-12">
+      <div class="deal2">
+        <img src="image/mob.webp" class="img-fluid w-100 h-100" alt="Mobile Banner">
+      </div>
+    </div>
+
+  </div>
+</div>
 <!-- ======================section11======================================== -->
  
 <div class="container-fluid mt-3">
